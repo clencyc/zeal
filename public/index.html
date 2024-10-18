@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Zeal</title>
+</head>
+<body>
+        <div class="container mx-auto p-4">
+          <div class="flex justify-between items-center">
+            <div>
+              <h2 class="text-3xl font-bold">Zeal</h2>
+              <p class="text-lg">Ticketing</p>
+            </div>
+            <button class="border-2 border-basket bg-white rounded-lg h-10 w-32 flex items-center justify-center space-x-2 hover:bg-gray-100 transition duration-300">
+              <img src="Images/shopping-basket.png" alt="Basket" class="h-6 w-6">
+              <span>My Events</span>
+            </button>
+          </div>
+          <header class="bg-white bold text-2xl font-roboto flex space-x-10 items-center justify-center border-b-4 border-gray-300">
+            <!-- The home, Events about contact header tags -->
+             <ul><a href="index.html">Home</a></ul>
+              <ul><a href="events.html">Events</a></ul>
+              <ul><a href="about.html">About</a></ul>
+              <ul><a href="contact.html">Contact</a></ul>
+          </header>
+        </div>
+    
+        <!-- Body -->
+        <div class="flex flex-col md:flex-row bg-primary bg-cover w-screen">
+          <div class="w-full md:w-1/2 p-4 md:p-14">
+            <!-- Swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="Images/audience-1853662_1280.jpg" alt="Audience">
+                </div>
+                <!-- <div class="swiper-slide">
+                  <img src="public/Images/party-8080105_1280.jpg" alt="Another Image">
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/Images/ticket-2974645_640.jpg" alt="Yet Another Image">
+                </div> -->
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- Add Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 flex font-roboto items-center justify-center mt-10 md:mt-0">
+            <div class="flex flex-col space-y-5 p-4 md:p-0">
+              <h1 class="text-3xl md:text-4xl font-roboto font-bold">Welcome to Zeal</h1>
+              <p class="text-base md:text-lg">The best place to find events</p>
+              <p>Your gateway to unforgettable experiences. Discover a world of events, from concerts and festivals to sports and theatre. Find your perfect ticket and let the adventure begin.</p>
+              <button class="bg-blue-500 w-32 justify-center items-center text-white px-2 py-2 rounded-lg"><a href="register.html">Get Started</a></button>
+            </div>
+          </div>
+        </div>
+    <!-- search tickets section -->
+    <section class="mt-1">
+      <div class="container mx-auto p-4">
+        <div class="bg-white border-black space-x-2 rounded-3xl p-4 flex justify-center items-center">
+          <form class="flex w-1/2 max-w-lg">
+            <input type="text" placeholder="Search for events" class="w-full p-2 rounded-l-lg border border-black focus:outline-none focus:ring-2 focus:ring-blue-500">
+            
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-300">
+              <img class="h-5" src="Images/search-interface-symbol.png" alt="">
+            </button>
+          </form>
+                <!-- Category Choice -->
+                <select class="p-2 bg-white h-12 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="">Category</option>
+                  <option value="concerts">Concerts</option>
+                  <option value="sports">Sports</option>
+                  <option value="theatre">Theatre</option>
+                  <option value="festivals">Festivals</option>
+                </select>
+            <!-- Location Choice with GPS Icon -->
+            <div class="relative flex items-center">
+                  <input type="text" placeholder="Location" class="p-2 pl-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <i class="fas fa-map-marker-alt absolute left-3 text-gray-400"></i>
+            </div>
+                        
+             <button type="submit" class="text-white px-4 py-2 rounded-r-lg hover:bg-gray-500 transition duration-300">
+                    <img class="h-5" src="Images/gps.png" alt="">
+              </button>
+    
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tickets Section -->
+    
+    <!-- Tickets Section -->
+    <div class="container mx-auto p-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <!-- Card 1 -->
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="ticket.html">
+            <img class="rounded-t-lg" src="Images/audience-1853662_1280.jpg" alt="" />
+          </a>
+          <div class="p-5">
+            <a href="ticket.html">
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Sol fest</h5>
+                      <!-- Rating -->
+            <div class="flex items-center mb-3">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-gray-300"></i>
+            </div>
+            </a>
+            <a href="ticket.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Get ticket
+              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="ticket.html">
+            <img class="rounded-t-lg" src="Images/party-8080105_1280.jpg" alt="" />
+          </a>
+          <div class="p-5">
+            <a href="ticket.html">
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Sol fest</h5>
+                      <!-- Rating -->
+            <div class="flex items-center mb-3">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-gray-300"></i>
+            </div>
+            </a>
+            <a href="ticket.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Get ticket
+              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="ticket.html">
+            <img class="rounded-t-lg" src="Images/party-8080105_1280.jpg" alt="" />
+          </a>
+          <div class="p-5">
+            <a href="ticket.html">
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Sol fest</h5>
+                      <!-- Rating -->
+            <div class="flex items-center mb-3">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-gray-300"></i>
+            </div>
+            </a>
+            <a href="ticket.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Get ticket
+              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="ticket.html">
+            <img class="rounded-t-lg" src="Images/party-8080105_1280.jpg" alt="" />
+          </a>
+          <div class="p-5">
+            <a href="ticket.html">
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Sol fest</h5>
+                      <!-- Rating -->
+            <div class="flex items-center mb-3">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-gray-300"></i>
+            </div>
+            </a>
+            <a href="ticket.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Get ticket
+              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <a href="ticket.html">
+            <img class="rounded-t-lg" src="Images/party-8080105_1280.jpg" alt="" />
+          </a>
+          <div class="p-5">
+            <a href="ticket.html">
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Sol fest</h5>
+                      <!-- Rating -->
+            <div class="flex items-center mb-3">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-gray-300"></i>
+            </div>
+            </a>
+            <a href="ticket.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Get ticket
+              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 w-screen" />
+    <footer class="rounded-lg w-screen bg-primary m-4">
+      <div class="w-screen max-w-screen-xl mx-auto p-4 md:py-8">
+          <div class="sm:flex sm:items-center sm:justify-between w-full">
+              <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                  <img src="Images/Gemini_Generated_Image_9pq5vt9pq5vt9pq5.jpeg" class="h-8" alt="Flowbite Logo" />
+                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">ZealTickets</span>
+              </a>
+              <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-black sm:mb-0 dark:text-black">
+                  <li>
+                      <a href="index.html" class="hover:underline me-4 md:me-6">Home</a>
+                  </li>
+                  <li>
+                      <a href="events.html" class="hover:underline me-4 md:me-6">Events</a>
+                  </li>
+                  <li>
+                      <a href="about.html" class="hover:underline me-4 md:me-6">About</a>
+                  </li>
+                  <li>
+                      <a href="contact.html" class="hover:underline">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">ZealTickets</a>. All Rights Reserved.</span>
+      </div>
+    </footer>
+    
+</body>
+</html>
