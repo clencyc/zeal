@@ -33,12 +33,15 @@ INSTALLED_APPS = [
     'authentication',
     'zealtickets',
     'rest_framework',
-    'rest_framework_simplejwt',
+    'tickets',
+    'events',
+    'rest_framework_simplejwt'
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
