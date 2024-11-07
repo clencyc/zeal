@@ -1,15 +1,12 @@
 from rest_framework import generics
 from .models import Event, Ticket
-from .serializers import EventSerializer, TicketSerializer
-
-class EventListView(generics.ListCreateAPIView):
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
-
-class EventDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
+from .serializers import TicketSerializer
+from django.shortcuts import render
 
 class TicketPurchaseView(generics.CreateAPIView):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
+
+def ticket_list(request):
+    tickets = Ticket.objects.all()  # Fetch all tickets
+    return render(request, 'tickets/ticket.html', {'tickets': tickets})

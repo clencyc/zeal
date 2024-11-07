@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,10 +24,10 @@
         </div>
         <header class="bg-white bold text-2xl font-roboto flex space-x-10 items-center justify-center border-b-4 border-gray-300">
           <!-- The home, Events about contact header tags -->
-           <ul><a href="index.html">Home</a></ul>
-            <ul><a href="events.html">Events</a></ul>
-            <ul><a href="about.html">About</a></ul>
-            <ul><a href="contact.html">Contact</a></ul>
+           <ul><a href="{% url 'index' %}">Home</a></ul>
+            <ul><a href="{% url 'events' %}">Events</a></ul>
+            <ul><a href="{% url 'about' %}">About</a></ul>
+            <ul><a href="{% url 'contact' %}">Contact</a></ul>
         </header>
       </div>
   <div class="container mx-auto p-8">

@@ -1,8 +1,12 @@
-from django.urls import path
+from django.urls import path, include
+
 from . import views
+from rest_framework.routers import DefaultRouter
+from .views import TicketPurchaseView
+
+
 
 urlpatterns = [
-    path('events/', views.EventListView.as_view(), name='event-list'),
-    path('events/<int:pk>/', views.EventDetailView.as_view(), name='event-detail'),
-    path('purchase/', views.TicketPurchaseView.as_view(), name='ticket-purchase'),
+    # path('api/', include(router.urls)),
+    path('', views.ticket_list, name='ticket_list'),
 ]
