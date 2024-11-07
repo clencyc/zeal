@@ -16,7 +16,7 @@
               <h2 class="text-3xl font-bold">Zeal Tickets</h2>
             </div>
             <button class="border-2 border-basket bg-white rounded-lg h-10 w-32 flex items-center justify-center space-x-2 hover:bg-gray-100 transition duration-300">
-              <img src="{% static 'Images/shopping-basket.png" alt="Basket" class="h-6 w-6' %}">
+              <img src="{% static 'Images/shopping-basket.png' %}" alt="Basket" class="h-6 w-6' %}">
               <span>My Events</span>
             </button>
           </div>
@@ -71,15 +71,17 @@
               {% for event in events %}
                   <div class="bg-white p-4 rounded-lg shadow-md">
                       <h2 class="text-xl font-bold mb-2">{{ event.name }}</h2>
+                      <img src="{{ event.image.url }}" alt="{{ event.name }}" class="w-full h-48 object-cover mb-4 rounded-lg">
                       <p class="font-bold text-gray-600">Category: {{ event.category.name }}</p>
                       <p class="font-bold text-gray-600">Date: {{ event.date }}</p>
                       <p class="font-bold text-gray-600">Location: {{ event.location }}</p>
+  
+                      <a href="{% url 'login' %}?next={% url 'ticket-booking' event.id %}" class="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-black font-semibold rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition duration-300 transform hover:scale-105">
+                        Get Ticket
+                    </a>
                   </div>
               {% endfor %}
           </div>
-      </div>
-  
-
 
     <hr class="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8 w-screen" />
     <footer class="rounded-lg w-screen bg-primary m-4">

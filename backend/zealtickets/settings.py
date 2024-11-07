@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'tickets',
     'events',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    'ticket_booking',
+    'widget_tweaks',
 ]
 
 REST_FRAMEWORK = {
@@ -66,8 +68,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'events', 'templates'),
-            os.path.join(BASE_DIR, 'tickets', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
