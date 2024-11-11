@@ -1,37 +1,52 @@
+# Import necessary modules and models
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('ticket')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+from django.contrib.auth.models import User
+from .models import CustomUser
+from .forms import CustomUserCreationForm
 
 def login_view(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        if not CustomUser.objects.filter(email=email).exists():
+            messages.error(request, 'Invalid Email')
+            return redirect('/login/')
+        
+        user = authenticate(email=email, password=password)
+        
+        if user is None:
+            messages.error(request, "Invalid Password")
+            return redirect('/login/')
+        else:
+            login(request, user)
+            return redirect('ticket_list')
+    
+    return render(request, 'registration/login.html')
+# Define a view function for the registration page
+def register(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
+            user = form.save()
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(email=email, password=password)
             if user is not None:
                 login(request, user)
-                next_url = request.GET.get('next', 'index')
-                return redirect(next_url)
+                messages.info(request, "Account created successfully!")
+                return redirect('ticket_list')
     else:
-        form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
+        form = CustomUserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
 
 @login_required
 def ticket(request):
-    return render(request, 'ticket.html')
+    return render(request, 'tickets/ticket.html')
+
+
+

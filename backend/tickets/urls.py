@@ -8,5 +8,5 @@ from .views import TicketPurchaseView
 
 urlpatterns = [
     # path('api/', include(router.urls)),
-    path('', views.ticket_list, name='ticket'),
+    path('list/', views.ticket_list, name='ticket_list')
 ]

@@ -16,9 +16,15 @@
               <h2 class="text-3xl font-bold">Zeal Tickets</h2>
             </div>
             <button class="border-2 border-basket bg-white rounded-lg h-10 w-32 flex items-center justify-center space-x-2 hover:bg-gray-100 transition duration-300">
-              <img src="{% static 'Images/shopping-basket.png' %}" alt="Basket" class="h-6 w-6' %}">
-              <span>My Events</span>
-            </button>
+              <img src="{% static 'Images/shopping-basket.png' %}" alt="Basket" class="h-6 w-6">
+              <span>
+                  {% if user.is_authenticated %}
+                      <a href="{% url 'ticket_list' %}">My Events</a>
+                  {% else %}
+                      <a href="{% url 'login' %}?next={% url 'ticket_list' %}">My Events</a>
+                  {% endif %}
+              </span>
+          </button>
           </div>
           <header class="bg-white bold text-2xl font-roboto flex space-x-10 items-center justify-center border-b-4 border-gray-300">
             <!-- The home, Events about contact header tags -->

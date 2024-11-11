@@ -6,6 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.register, name='register'),
     path('login/', views.login_view, name='login'),
-    path('ticket/', views.ticket, name='ticket'),
     path('accounts/', include('django.contrib.auth.urls')),  # Include built-in auth URLs
 ]
